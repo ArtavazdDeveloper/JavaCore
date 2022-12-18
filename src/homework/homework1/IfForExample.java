@@ -23,7 +23,7 @@ public class IfForExample {
             System.out.println("a no equals b");
         }
         System.out.print("Output: ");
-        for (int i = a; i < b; i++) {
+        for (int i = a; i <= b; i++) {
             System.out.print(i + ",");
         }
         char x = ( char ) a;
