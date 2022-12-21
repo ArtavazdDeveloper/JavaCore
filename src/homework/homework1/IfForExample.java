@@ -1,6 +1,7 @@
 package homework.homework1;
 
 import java.net.SocketOption;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class IfForExample {
@@ -24,10 +25,16 @@ public class IfForExample {
         }
         System.out.print("Output: ");
         for (int i = a; i <= b; i++) {
-            System.out.print(i + ",");
+            System.out.print(i);
+            if (i == b) {
+                System.out.print(".");
+            } else if (i < b) {
+                System.out.print(",");
+            }
+
         }
-        char x = ( char ) a;
-        char y = ( char ) b;
+        char x = (char) a;
+        char y = (char) b;
         x = '&';
         y = 'a';
 
