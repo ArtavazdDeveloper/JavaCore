@@ -19,8 +19,9 @@ public class ArrayUtil {
             }
         }
         for (int i = 1; i < array.length; i++) {
-            if (array[i] < min)
+            if (array[i] < min) {
                 min = array[i];
+            }
         }
         System.out.println("max: " + max);
         System.out.println("min: " + min);
