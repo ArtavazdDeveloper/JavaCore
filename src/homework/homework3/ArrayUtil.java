@@ -21,7 +21,7 @@ public class ArrayUtil {
         System.out.println();
         System.out.print("odd : ");
         for (int j = 0; j < array.length; j++) {
-            if ((array[j] % 2) != 0) {
+            if (array[j] % 2 != 0) {
                 odd = array[j];
                 System.out.print(odd + " ");
             }
@@ -40,7 +40,9 @@ public class ArrayUtil {
         for (int i = 0; i < array.length; i++) {
             arraysum = arraysum + array[i];
         }
+
         System.out.println("sum of  array : " + arraysum);
+        System.out.println("amount of elements:" + array.length);
         average = arraysum / array.length;
         System.out.println("average : " + average);
         System.out.println("first elements : " + array[0] );
