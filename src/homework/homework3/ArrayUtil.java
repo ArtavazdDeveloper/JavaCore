@@ -8,6 +8,7 @@ public class ArrayUtil {
         int numbereven = 0;
         int numberood = 0;
         int arraysum = 0;
+
         int numbrarray = 0;
         int average = 0;
         System.out.print("even : ");
