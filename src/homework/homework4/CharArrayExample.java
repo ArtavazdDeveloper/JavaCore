@@ -39,48 +39,6 @@ public class CharArrayExample {
 
 
 
-        //if (chars3[chars3.length - 2] == 'l' && chars3[chars3.length - 1] == 'y' )
-            //System.out.print(true);
-
-
-
-        //for (int x : chars) {
-        //    if (x == c) {
-        //        k++;
-            //}
-        //}
-
-        //System.out.println(k);
-
-
-
-
-        //char[] chars3 = {'j', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
-        //char[] srv = {'l', 'y'};
-        //if (char man = chars3.length)
-        //System.out.println(chars2.equals(srv));
-
-
-        //for (int i = 0; i < chars3.length; i++) {
-
-            //if (new String(chars).indexOf('ly') != -1) {
-                //found = true;
-
-            //if(i!=0 && chars[i - 1]=='y' && chars3[i-2]=='l'){
-                //chars3[i].['y'];
-
-                //found = true;
-            //}
-            //if (i == chars3.length - 2 && chars3[i] == 'l') {
-                //found = true;
-
-            //} else if (i == chars3.length - 1 && chars3[i] == 'y') {
-                //found = true;
-
-            //}else found = false;
-
-
-
         }
 
 

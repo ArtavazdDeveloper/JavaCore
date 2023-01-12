@@ -1,9 +1,19 @@
 package homework.homework6;
 
+import java.util.Scanner;
+
 public class ArrayUtilDemo {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter array length: ");
 
-        int[] array = {2, 5, 8, 10, 88, 22, 11, 66, 12, 30, 6, 4, 3};
+        int size = input.nextInt();
+        int array[] = new int[size];
+        System.out.println("Insert array elements:");
+        for (int i = 0; i < size; i++) {
+
+            array[i] = input.nextInt();
+        }
         ArrayUtil ar = new ArrayUtil();
         ar.minOfArray(array);
         ar.maxOfArray(array);
@@ -12,8 +22,8 @@ public class ArrayUtilDemo {
         ar.quantityOfArray(array);
         ar.sumOfArray(array);
         ar.averageOfArray(array);
-
-
-
     }
+
+
 }
+

@@ -30,8 +30,7 @@ public class ArrayUtil {
         System.out.print("even: ");
         for (int i = 0; i < array.length; i++) {
             if ((array[i] % 2) == 0) {
-                int even = array[i];
-                System.out.print(even + " ");
+                System.out.print(array[i] + " ");
             }
 
         }
@@ -43,8 +42,7 @@ public class ArrayUtil {
         System.out.print("odd: ");
         for (int j = 0; j < array.length; j++) {
             if (array[j] % 2 != 0) {
-                int odd = array[j];
-                System.out.print(odd + " ");
+                System.out.print(array[j] + " ");
             }
         }
         System.out.println();
