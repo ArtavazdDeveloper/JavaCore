@@ -6,10 +6,7 @@ public class ArrayUtil {
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
                 min = array[i];
-
-
             }
-
         }
         System.out.println("min:" + min);
     }
@@ -19,9 +16,7 @@ public class ArrayUtil {
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
-
             }
-
         }
         System.out.println("max:" + max);
     }
@@ -32,7 +27,6 @@ public class ArrayUtil {
             if ((array[i] % 2) == 0) {
                 System.out.print(array[i] + " ");
             }
-
         }
         System.out.println();
     }
@@ -67,7 +61,6 @@ public class ArrayUtil {
 
         for (int i = 0; i < array.length; i++) {
             arraysum = arraysum + array[i];
-
         }
         System.out.println("sum of  array: " + arraysum);
     }
@@ -76,10 +69,8 @@ public class ArrayUtil {
         int arraysum = 0;
         for (int i = 0; i < array.length; i++) {
             arraysum = arraysum + array[i];
-
         }
         int average = arraysum / array.length;
         System.out.println("average: " + average);
     }
-
 }
