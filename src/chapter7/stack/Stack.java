@@ -1,14 +1,15 @@
-package chapter6;
+package chapter7.stack;
 
 public class Stack {
-    int stck[] = new int[10];
-    int tos;
+    private int stck[];
+    private int tos;
 
-    public Stack(){
-     tos = -1;
+    Stack(int size){
+        stck = new int[size];
+        tos = -1;
     }
     void push(int item){
-        if (tos == 9)
+        if (tos == stck.length - 1)
             System.out.println("Стек заполнен.");
         else
             stck[++tos] = item;

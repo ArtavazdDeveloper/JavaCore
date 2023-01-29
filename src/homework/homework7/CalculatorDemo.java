@@ -16,6 +16,7 @@ public class CalculatorDemo {
         int multiply = ca.multiply(numbers, numbers2);
         int divide = ca.divide(numbers, numbers2);
 
+
         System.out.println("Sum: " + sum);
         System.out.println("Minus: " + minus);
         System.out.println("Multiply: " + multiply);
