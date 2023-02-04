@@ -1,7 +1,7 @@
 package homework.homework9;
 
 public class Stack {
-     char[] stck = new char[10];
+     char[] stck = new char[100];
      int tos;
 
     public Stack(){
@@ -11,9 +11,9 @@ public class Stack {
         if (tos == 9)
             return;
         else
-            stck[++tos] = (char) item;
+            stck[++tos] = item;
     }
-    int pop(char item){
+    char pop(char item){
         if (tos < 0){
             return 0;
         }
