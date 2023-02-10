@@ -7,7 +7,6 @@ public class EmployeeDemo {
         Scanner scanner = new Scanner(System.in);
         EmployeeStorage employeeStorage = new EmployeeStorage();
 
-
         boolean isRun = true;
 
         while(isRun){
@@ -22,8 +21,21 @@ public class EmployeeDemo {
                     isRun = false;
                     break;
                 case "1":
-                    employeeStorage.PrintScan();
-
+                    System.out.println("please input name's employee");
+                    String name = scanner.nextLine();
+                    System.out.println("please input surname's  employee");
+                    String surname = scanner.nextLine();
+                    System.out.println("please input emplyeeID ");
+                    String emplyeeID = scanner.nextLine();
+                    System.out.println("please input salary's employee ");
+                    String salary = scanner.nextLine();
+                    System.out.println("please input company's employee ");
+                    String company = scanner.nextLine();
+                    System.out.println("please input position's employee");
+                    String position = scanner.nextLine();
+                    Employee employee = new Employee(name,  surname, emplyeeID,Double.parseDouble(salary), company, position );
+                    EmployeeStorage.add(employee);
+                    System.out.println("Employee is created");
                     break;
                 case "2":
                     EmployeeStorage.print();
