@@ -5,15 +5,25 @@ import java.util.Objects;
 
 public class Employee {
 
-   private String name;
-   private String surname;
-   private String emplyeeID;
-   private double salary;
-   private String company;
-   private String position;
-   boolean activ = true;
+    private String name;
+    private String surname;
+    private String emplyeeID;
+    private double salary;
+    private String company;
+    private String position;
+    boolean activ = true;
 
     public Employee(String employeeDatum, String datum, Employee emplyeeID, double salary, String company, String position) {
+    }
+
+    public Employee(String name, String surname, String emplyeeID, double salary, String company, String position, boolean activ) {
+        this.name = name;
+        this.surname = surname;
+        this.emplyeeID = emplyeeID;
+        this.salary = salary;
+        this.company = company;
+        this.position = position;
+        this.activ = activ;
     }
 
     public Employee(String name, String surname, String emplyeeID, double salary, String company, String position) {
@@ -121,6 +131,7 @@ public class Employee {
                 ", salary=" + salary +
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
+                ", activ=" + activ +
                 '}';
     }
 }
