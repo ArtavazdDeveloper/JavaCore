@@ -1,75 +1,87 @@
 package homeworks.employee;
 
-import java.util.Scanner;
-
 public class EmployeeStorage {
 
-    private static Employee [] array = new Employee[100];
+    private  Employee [] employees = new Employee[100];
 
-    private static int size = 0;
-    public static void add(Employee value) {
-        if (size == array.length) {
+    private  int size = 0;
+    public  void add(Employee employee) {
+        if (size == employees.length) {
             extend();
         }
-        array[size++] = value;
+        employees[size++] = employee;
     }
-    private static void extend() {
+    private  void extend() {
 
-        Employee[] tmp = new Employee[array.length + 10];
-        for (int i = 0; i < size; i++) {
-            tmp[i] = array[i];
-        }
-        array = tmp;
-    }public static void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(array[i] + " ");
-        }
+        Employee[] tmp = new Employee[employees.length + 10];
+        System.arraycopy(employees,0,tmp,0,size);
+        employees = tmp;
     }
 
-    public static void searchID(String keyword) {
-        boolean found = false;
+    public void print() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(employees[i]);
+        }
+    }
+
+    public  Employee searchID(String id) {
         for (int i = 0; i < size; i++){
-            Employee employee = array[i];
-            if (employee.getEmplyeeID().contains(keyword)){
-                found = true;
+            Employee employee = employees[i];
+            if (employee.getEmplyeeID().contains(id)){
+                return employee;
+            }
+        }
+         return null;
+     }
+    public Employee searchCompany(String companyName) {
+        for (int i = 0; i < size; i++){
+            Employee employee = employees[i];
+            if (employee.getCompany().contains(companyName)){
                 System.out.println(employee);
             }
         }
-        if  (!found){
-            System.out.println("Employee with " + keyword + " does not exists");
-        }
+        return null;
     }
-    public static void searchCompany(String keyword2) {
-        boolean found = false;
-        for (int i = 0; i < size; i++){
-            Employee employee = array[i];
-            if (employee.getCompany().contains(keyword2)){
-                found = true;
-                System.out.println(employee);
+     public Employee searchEmployee(double salary1, double salary2) {
+         for (int i = 0; i < size; i++) {
+             if (employees[i].getSalary() <= salary1 || employees[i].getSalary() >= salary2){
+                 System.out.println(employees[i] + " , ");
+             }
+         }
+         return null;
+     }
+     public Employee companyNamechange(String Id, String company1){
+         for (int i = 0; i < size ; i++) {
+             if (employees[i].getEmplyeeID().contains(Id)){
+                 employees[i].setCompany(company1);
+                 System.out.println(employees[i]);
+             }
+         }
+         return null;
+     }
+     public Employee activEmployee(String id, boolean activ1){
+         for (int i = 0; i < size; i++) {
+             if (employees[i].getEmplyeeID().contains(id)){
+                 activ1 = false;
+                 employees[i].setActiv(activ1);
+             }
+         }
+         return null;
+     }
+    public Employee activateEmployeeByid(String iD, boolean active2){
+        for (int i = 0; i < size ; i++) {
+            if (employees[i].getEmplyeeID().contains(iD)) {
+                active2 = true;
+                employees[i].setActiv(active2);
             }
         }
-        if  (!found){
-            System.out.println("Employee with " + keyword2 + " does not exists");
-        }
-
+        return null;
     }
-    void PrintScan(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("please input name's employee");
-        String name = scanner.nextLine();
-        System.out.println("please input surname's  employee");
-        String surname = scanner.nextLine();
-        System.out.println("please input emplyeeID ");
-        String emplyeeID = scanner.nextLine();
-        System.out.println("please input salary's employee ");
-        String salary = scanner.nextLine();
-        System.out.println("please input company's employee ");
-        String company = scanner.nextLine();
-        System.out.println("please input position's employee");
-        String position = scanner.nextLine();
-        Employee employee = new Employee(name,  surname, emplyeeID,Double.parseDouble(salary), company, position );
-        EmployeeStorage.add(employee);
-        System.out.println("Employee is created");
-
+    public void employeesActivprint() {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].isActiv() == true){
+                System.out.println(employees[i] + ",");
+            }
+        }
     }
 }

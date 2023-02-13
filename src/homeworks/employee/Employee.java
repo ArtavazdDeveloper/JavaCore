@@ -11,8 +11,9 @@ public class Employee {
    private double salary;
    private String company;
    private String position;
+   boolean activ = true;
 
-    public Employee() {
+    public Employee(String employeeDatum, String datum, Employee emplyeeID, double salary, String company, String position) {
     }
 
     public Employee(String name, String surname, String emplyeeID, double salary, String company, String position) {
@@ -22,6 +23,14 @@ public class Employee {
         this.salary = salary;
         this.company = company;
         this.position = position;
+    }
+
+    public boolean isActiv() {
+        return activ;
+    }
+
+    public void setActiv(boolean activ) {
+        this.activ = activ;
     }
 
     public String getName() {
@@ -80,6 +89,7 @@ public class Employee {
         Employee employee = (Employee) o;
 
         if (Double.compare(employee.salary, salary) != 0) return false;
+        if (activ != employee.activ) return false;
         if (!Objects.equals(name, employee.name)) return false;
         if (!Objects.equals(surname, employee.surname)) return false;
         if (!Objects.equals(emplyeeID, employee.emplyeeID)) return false;
@@ -98,6 +108,7 @@ public class Employee {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (company != null ? company.hashCode() : 0);
         result = 31 * result + (position != null ? position.hashCode() : 0);
+        result = 31 * result + (activ ? 1 : 0);
         return result;
     }
 
