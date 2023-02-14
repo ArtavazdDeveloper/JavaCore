@@ -44,7 +44,7 @@ public class EmployeeStorage {
     }
      public Employee searchEmployee(double salary1, double salary2) {
          for (int i = 0; i < size; i++) {
-             if (employees[i].getSalary() <= salary1 || employees[i].getSalary() >= salary2){
+             if (employees[i].getSalary() >= salary2 && employees[i].getSalary() <= salary1 ){
                  System.out.println(employees[i] + " , ");
              }
          }
