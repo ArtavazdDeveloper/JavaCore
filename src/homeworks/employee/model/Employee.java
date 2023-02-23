@@ -1,6 +1,9 @@
-package homeworks.employee;
+package homeworks.employee.model;
 
 
+import homeworks.employee.util.DateUtil;
+
+import java.util.Date;
 import java.util.Objects;
 
 public class Employee {
@@ -9,38 +12,35 @@ public class Employee {
     private String surname;
     private String emplyeeID;
     private double salary;
-    private String company;
+    private Company company;
     private String position;
-    boolean activ = true;
+    private boolean active = true;
+    private Date registerDate;
+    private Date dateOfBirthday;
 
-    public Employee(String employeeDatum, String datum, Employee emplyeeID, double salary, String company, String position) {
-    }
 
-    public Employee(String name, String surname, String emplyeeID, double salary, String company, String position, boolean activ) {
+
+    public Employee(String name, String surname, String emplyeeID, double salary, Company company,
+                    String position, Date registerDate, Date dateOfBirthday) {
         this.name = name;
         this.surname = surname;
         this.emplyeeID = emplyeeID;
         this.salary = salary;
         this.company = company;
         this.position = position;
-        this.activ = activ;
+        this.active = active;
+        this.registerDate = registerDate;
+        this.dateOfBirthday = dateOfBirthday;
     }
 
-    public Employee(String name, String surname, String emplyeeID, double salary, String company, String position) {
-        this.name = name;
-        this.surname = surname;
-        this.emplyeeID = emplyeeID;
-        this.salary = salary;
-        this.company = company;
-        this.position = position;
+
+
+    public boolean isActive() {
+        return active;
     }
 
-    public boolean isActiv() {
-        return activ;
-    }
-
-    public void setActiv(boolean activ) {
-        this.activ = activ;
+    public void setActive(boolean activ) {
+        this.active = activ;
     }
 
     public String getName() {
@@ -49,6 +49,22 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public Date getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(Date dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
     }
 
     public String getSurname() {
@@ -75,11 +91,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 
@@ -99,12 +115,15 @@ public class Employee {
         Employee employee = (Employee) o;
 
         if (Double.compare(employee.salary, salary) != 0) return false;
-        if (activ != employee.activ) return false;
+        if (active != employee.active) return false;
         if (!Objects.equals(name, employee.name)) return false;
         if (!Objects.equals(surname, employee.surname)) return false;
         if (!Objects.equals(emplyeeID, employee.emplyeeID)) return false;
         if (!Objects.equals(company, employee.company)) return false;
-        return Objects.equals(position, employee.position);
+        if (!Objects.equals(position, employee.position)) return false;
+        if (!Objects.equals(registerDate, employee.registerDate))
+            return false;
+        return Objects.equals(dateOfBirthday, employee.dateOfBirthday);
     }
 
     @Override
@@ -118,7 +137,9 @@ public class Employee {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (company != null ? company.hashCode() : 0);
         result = 31 * result + (position != null ? position.hashCode() : 0);
-        result = 31 * result + (activ ? 1 : 0);
+        result = 31 * result + (active ? 1 : 0);
+        result = 31 * result + (registerDate != null ? registerDate.hashCode() : 0);
+        result = 31 * result + (dateOfBirthday != null ? dateOfBirthday.hashCode() : 0);
         return result;
     }
 
@@ -131,7 +152,9 @@ public class Employee {
                 ", salary=" + salary +
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
-                ", activ=" + activ +
+                ", active=" + active +
+                ", registerDate=" + DateUtil.dateToString(registerDate) +
+                ", dateOfBirthday=" + DateUtil.dateToString(dateOfBirthday) +
                 '}';
     }
 }
