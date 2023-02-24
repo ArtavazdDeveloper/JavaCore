@@ -1,29 +1,30 @@
-package homeworks.employee.storage;
+package homeworks.medicalCenter.storage;
 
 import homeworks.employee.model.Company;
 import homeworks.employee.model.Employee;
+import homeworks.medicalCenter.model.Person;
 
-public class EmployeeStorage {
+public class MedicalCentrStorage {
 
-    private  Employee[] employees = new Employee[100];
+    private  Person[] persons = new Person[100];
 
     private  int size = 0;
-    public  void add(Employee employee) {
-        if (size == employees.length) {
+    public  void add(Person person) {
+        if (size == persons.length) {
             extend();
         }
-        employees[size++] = employee;
+        persons[size++] = person;
     }
     private  void extend() {
 
-        Employee[] tmp = new Employee[employees.length + 10];
-        System.arraycopy(employees,0,tmp,0,size);
-        employees = tmp;
+        Person[] tmp = new Person[persons.length + 10];
+        System.arraycopy(persons,0,tmp,0,size);
+        persons = tmp;
     }
 
     public void print() {
         for (int i = 0; i < size; i++) {
-            System.out.println(employees[i]);
+            System.out.println(persons[i]);
         }
     }
 
