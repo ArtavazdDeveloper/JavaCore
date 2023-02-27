@@ -1,13 +1,14 @@
 package homeworks.medicalCenter.model;
 
+import homeworks.medicalCenter.utill.DateUtil;
+
 import java.util.Date;
 import java.util.Objects;
 
 public class Patient extends Person {
    private Date registerDateTime;
 
-   public Patient(String id, String name, String surname, String email, String doctor) {
-      super(id, name, surname, email, doctor);
+   public Patient() {
    }
 
    public Patient(String id, String name, String surname, String email, String doctor, Date registerDateTime) {
@@ -41,15 +42,11 @@ public class Patient extends Person {
       return result;
    }
 
+
    @Override
    public String toString() {
       return "Patient{" +
-              "registerDateTime=" + registerDateTime +
-              ", id='" + id + '\'' +
-              ", name='" + name + '\'' +
-              ", surname='" + surname + '\'' +
-              ", email='" + email + '\'' +
-              ", doctor='" + doctor + '\'' +
-              '}';
+              "registerDateTime=" + DateUtil.dateTime((java.sql.Date) registerDateTime) +
+              "} " + super.toString();
    }
 }
