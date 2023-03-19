@@ -35,8 +35,8 @@ public class ArrayUtil {
         System.out.println("number of even : " + numbereven );
         System.out.println("number of odd : " + numberood);
 
-        for (int i = 0; i < array.length; i++) {
-            arraysum = arraysum + array[i];
+        for (int j : array) {
+            arraysum = arraysum + j;
         }
 
         System.out.println("sum of  array : " + arraysum);
