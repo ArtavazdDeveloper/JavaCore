@@ -34,10 +34,10 @@ public class CollectionExample1 {
     private static void deleteName(ArrayList<String> names) {
         System.out.println("Write a name to delete");
         String enteredName = scanner.nextLine();
-        if(names.contains(enteredName)){
+            names.contains(enteredName);
             names.remove(enteredName);
             System.out.println(names);
-        }
+
         System.out.println("This name is not on the list!");
     }
 
